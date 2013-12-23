@@ -1,0 +1,28 @@
+<h1>Ryan's Journal</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entry Title</th>
+      <th>Entry</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.title %></td>
+        <td><%= entry.description %></td>
+        <td><%= entry.category.name %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: {confirm: 'Are you sure?' } %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Entry', new_entry_path %>
