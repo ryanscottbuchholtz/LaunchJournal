@@ -1,20 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @entry.description %>
-</p>
+<h1> Show</h1>
 
-<p>
-  <strong>Category:</strong>
-  <%= @entry.category.name %>
-</p>
+<table>
 
+<tr><th> Title </th><th> Description </th><th> Category </th></tr>
+ <tr> 
+    <td> <%= @entry.title %> </td>
+    <td> <%= @entry.description %> </td>
+    <td> <%= @entry.rendered_category_name%> </td> 
+ </tr>
+  <td><%= link_to 'Back', entries_path %></td>
 
-
-
-<%= link_to 'Edit', edit_entry_path(@entry) %>  |
-<%= link_to 'Back', entries_path %>
+</table>

@@ -37,6 +37,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'pry-rails'
 end
 
 group :development do

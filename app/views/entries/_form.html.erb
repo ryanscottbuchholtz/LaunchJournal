@@ -4,7 +4,7 @@
       <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this journal entry from being saved:</h2>
 
       <ul>
-      <% @entries.errors.full_messages.each do |msg| %>
+      <% @entry.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -19,9 +19,9 @@
     <%= f.label :description %> <i>(required)</i> <br>
     <%= f.text_field :description %>
   </div>
-    <div class="category">
+  <div class="category">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= collection_select(:entry, :category_id, Category.all, :id, :name, include_blank: true) %>
   </div>
   <div class="actions">
     <%= f.submit %>

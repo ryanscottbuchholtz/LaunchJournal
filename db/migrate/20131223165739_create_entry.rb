@@ -4,6 +4,8 @@ class CreateEntry < ActiveRecord::Migration
       t.string :title, null: false
       t.string :description, null: false
       t.integer :category_id
+
+      t.timestamps
     end
   end
 end

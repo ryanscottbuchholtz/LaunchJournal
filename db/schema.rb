@@ -17,15 +17,19 @@ ActiveRecord::Schema.define(version: 20131223165739) do
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.string "name", null: false
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
   create_table "entries", force: true do |t|
-    t.string  "title",       null: false
-    t.string  "description", null: false
-    t.integer "category_id"
+    t.string   "title",       null: false
+    t.string   "description", null: false
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
