@@ -5,6 +5,8 @@ class Entry<ActiveRecord::Base
   belongs_to :category,
     inverse_of: :entries
 
+  default_scope order('updated_at DESC')
+
   def rendered_category_name
     if category == nil
       ""

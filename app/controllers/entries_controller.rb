@@ -20,13 +20,10 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry.destroy
-    
     redirect_to entries_url
-    
   end
 
   def show
-    
   end
 
   def update
@@ -40,7 +37,6 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    
   end
 
 
@@ -53,6 +49,5 @@ class EntriesController < ApplicationController
   def entry_params
     params.require(:entry).permit(:title, :description, :category_id)
   end
-
 
 end
